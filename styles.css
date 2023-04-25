@@ -1,12 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
-
+/* General styles */
 body {
-    font-family: 'EB Garamond', serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4e9d8;
-    color: #3e3e3e;
+    color: #333;
+}
+
+.container {
+    margin: auto;
+    padding: 30px;
+    max-width: 1200px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 15px;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
 }
 
 .logo {
@@ -14,56 +35,37 @@ body {
     height: 2em;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-bottom: 80px;
-}
-
-.title {
-    font-family: 'Cinzel', serif;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.content {
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.content h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    margin-bottom: 5px;
-}
-
-.content ul {
-    padding-left: 40px;
-}
-
-.navigation {
-    font-family: 'Cinzel', serif;
-    background-color: #704f32;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 0;
+.knight-overlay {
     position: fixed;
-    bottom: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    background-image: url("path/to/your/knight-kneeling.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 500;
 }
 
-.navigation a {
-    color: #f4e9d8;
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.3s;
-}
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 
-.navigation a:hover {
-    color: #b99867;
+    .navigation {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navigation a {
+        margin: 5px;
+    }
+
+    .knight-overlay {
+        background-size: cover;
+    }
 }
